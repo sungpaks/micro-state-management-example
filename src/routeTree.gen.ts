@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as UseContextExtraReRenderLimitationsIndexImport } from './routes/use-context-extra-re-render-limitations/index'
+import { Route as UseContextExtraReRenderLimitationsSolution2IndexImport } from './routes/use-context-extra-re-render-limitations/solution2/index'
 
 // Create/Update Routes
 
@@ -26,6 +27,13 @@ const UseContextExtraReRenderLimitationsIndexRoute =
   UseContextExtraReRenderLimitationsIndexImport.update({
     id: '/use-context-extra-re-render-limitations/',
     path: '/use-context-extra-re-render-limitations/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const UseContextExtraReRenderLimitationsSolution2IndexRoute =
+  UseContextExtraReRenderLimitationsSolution2IndexImport.update({
+    id: '/use-context-extra-re-render-limitations/solution2/',
+    path: '/use-context-extra-re-render-limitations/solution2/',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -47,6 +55,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UseContextExtraReRenderLimitationsIndexImport
       parentRoute: typeof rootRoute
     }
+    '/use-context-extra-re-render-limitations/solution2/': {
+      id: '/use-context-extra-re-render-limitations/solution2/'
+      path: '/use-context-extra-re-render-limitations/solution2'
+      fullPath: '/use-context-extra-re-render-limitations/solution2'
+      preLoaderRoute: typeof UseContextExtraReRenderLimitationsSolution2IndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -55,37 +70,53 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
+  '/use-context-extra-re-render-limitations/solution2': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
+  '/use-context-extra-re-render-limitations/solution2': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/use-context-extra-re-render-limitations/': typeof UseContextExtraReRenderLimitationsIndexRoute
+  '/use-context-extra-re-render-limitations/solution2/': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/use-context-extra-re-render-limitations'
+  fullPaths:
+    | '/'
+    | '/use-context-extra-re-render-limitations'
+    | '/use-context-extra-re-render-limitations/solution2'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/use-context-extra-re-render-limitations'
-  id: '__root__' | '/' | '/use-context-extra-re-render-limitations/'
+  to:
+    | '/'
+    | '/use-context-extra-re-render-limitations'
+    | '/use-context-extra-re-render-limitations/solution2'
+  id:
+    | '__root__'
+    | '/'
+    | '/use-context-extra-re-render-limitations/'
+    | '/use-context-extra-re-render-limitations/solution2/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   UseContextExtraReRenderLimitationsIndexRoute: typeof UseContextExtraReRenderLimitationsIndexRoute
+  UseContextExtraReRenderLimitationsSolution2IndexRoute: typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   UseContextExtraReRenderLimitationsIndexRoute:
     UseContextExtraReRenderLimitationsIndexRoute,
+  UseContextExtraReRenderLimitationsSolution2IndexRoute:
+    UseContextExtraReRenderLimitationsSolution2IndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -99,7 +130,8 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/use-context-extra-re-render-limitations/"
+        "/use-context-extra-re-render-limitations/",
+        "/use-context-extra-re-render-limitations/solution2/"
       ]
     },
     "/": {
@@ -107,6 +139,9 @@ export const routeTree = rootRoute
     },
     "/use-context-extra-re-render-limitations/": {
       "filePath": "use-context-extra-re-render-limitations/index.tsx"
+    },
+    "/use-context-extra-re-render-limitations/solution2/": {
+      "filePath": "use-context-extra-re-render-limitations/solution2/index.tsx"
     }
   }
 }

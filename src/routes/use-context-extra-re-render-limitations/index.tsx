@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import ExampleWrapper from "@/components/ExampleWrapper";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { createContext, useState } from "react";
 import Parent from "./.components/Parent";
 
@@ -26,6 +26,12 @@ function RouteComponent() {
         <Button onClick={() => setCount2(count2 + 1)}>Increment count2</Button>
         <Parent />
       </ExampleWrapper>
+
+      <div className="p-4 mt-8">
+        <Link to="/use-context-extra-re-render-limitations/solution2">
+          {">"} Solution 2 {"<"}
+        </Link>
+      </div>
     </CountContext.Provider>
   );
 }
