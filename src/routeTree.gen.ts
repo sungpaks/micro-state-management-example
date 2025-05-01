@@ -11,22 +11,23 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as Chapter1Import } from './routes/chapter1'
 import { Route as IndexImport } from './routes/index'
+import { Route as UseContextExtraReRenderLimitationsIndexImport } from './routes/use-context-extra-re-render-limitations/index'
 
 // Create/Update Routes
-
-const Chapter1Route = Chapter1Import.update({
-  id: '/chapter1',
-  path: '/chapter1',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const UseContextExtraReRenderLimitationsIndexRoute =
+  UseContextExtraReRenderLimitationsIndexImport.update({
+    id: '/use-context-extra-re-render-limitations/',
+    path: '/use-context-extra-re-render-limitations/',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
@@ -39,11 +40,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/chapter1': {
-      id: '/chapter1'
-      path: '/chapter1'
-      fullPath: '/chapter1'
-      preLoaderRoute: typeof Chapter1Import
+    '/use-context-extra-re-render-limitations/': {
+      id: '/use-context-extra-re-render-limitations/'
+      path: '/use-context-extra-re-render-limitations'
+      fullPath: '/use-context-extra-re-render-limitations'
+      preLoaderRoute: typeof UseContextExtraReRenderLimitationsIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -53,37 +54,38 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/chapter1': typeof Chapter1Route
+  '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/chapter1': typeof Chapter1Route
+  '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/chapter1': typeof Chapter1Route
+  '/use-context-extra-re-render-limitations/': typeof UseContextExtraReRenderLimitationsIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/chapter1'
+  fullPaths: '/' | '/use-context-extra-re-render-limitations'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/chapter1'
-  id: '__root__' | '/' | '/chapter1'
+  to: '/' | '/use-context-extra-re-render-limitations'
+  id: '__root__' | '/' | '/use-context-extra-re-render-limitations/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  Chapter1Route: typeof Chapter1Route
+  UseContextExtraReRenderLimitationsIndexRoute: typeof UseContextExtraReRenderLimitationsIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  Chapter1Route: Chapter1Route,
+  UseContextExtraReRenderLimitationsIndexRoute:
+    UseContextExtraReRenderLimitationsIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -97,14 +99,14 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/chapter1"
+        "/use-context-extra-re-render-limitations/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/chapter1": {
-      "filePath": "chapter1.tsx"
+    "/use-context-extra-re-render-limitations/": {
+      "filePath": "use-context-extra-re-render-limitations/index.tsx"
     }
   }
 }

@@ -21,8 +21,11 @@ export default function Header() {
         </div>
       </div>
       <div className="flex gap-2">
-        <Link to="/chapter1" className="bg-amber-300">
-          Chapter 1
+        <Link
+          to="/use-context-extra-re-render-limitations"
+          className="bg-amber-400 px-2 py-1"
+        >
+          Example 1
         </Link>
       </div>
     </div>
