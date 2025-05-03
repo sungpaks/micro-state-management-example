@@ -1,7 +1,6 @@
-import { useCount2 } from "./CountProvider";
+import { useCount2 } from "../.contexts/count2";
 import Button from "@/components/Button";
 import RenderCount from "@/components/RenderCount";
-import React from "react";
 
 export default function Counter2() {
   const [count, setCount] = useCount2();
