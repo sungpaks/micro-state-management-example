@@ -27,11 +27,18 @@ function RouteComponent() {
         <Parent />
       </ExampleWrapper>
 
-      <div className="p-4 mt-8">
-        <Link to="/use-context-extra-re-render-limitations/solution2">
-          {">"} Solution 2 {"<"}
-        </Link>
-      </div>
+      <Link
+        to="/use-context-extra-re-render-limitations/solution1"
+        className="p-4 mt-8 bg-white"
+      >
+        {">"} Solution 1 {"<"}
+      </Link>
+      <Link
+        to="/use-context-extra-re-render-limitations/solution2"
+        className="p-4 mt-8 bg-white"
+      >
+        {">"} Solution 2 {"<"}
+      </Link>
     </CountContext.Provider>
   );
 }

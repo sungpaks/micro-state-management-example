@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as UseContextExtraReRenderLimitationsIndexImport } from './routes/use-context-extra-re-render-limitations/index'
 import { Route as UseContextExtraReRenderLimitationsSolution2IndexImport } from './routes/use-context-extra-re-render-limitations/solution2/index'
+import { Route as UseContextExtraReRenderLimitationsSolution1IndexImport } from './routes/use-context-extra-re-render-limitations/solution1/index'
 
 // Create/Update Routes
 
@@ -37,6 +38,13 @@ const UseContextExtraReRenderLimitationsSolution2IndexRoute =
     getParentRoute: () => rootRoute,
   } as any)
 
+const UseContextExtraReRenderLimitationsSolution1IndexRoute =
+  UseContextExtraReRenderLimitationsSolution1IndexImport.update({
+    id: '/use-context-extra-re-render-limitations/solution1/',
+    path: '/use-context-extra-re-render-limitations/solution1/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -55,6 +63,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UseContextExtraReRenderLimitationsIndexImport
       parentRoute: typeof rootRoute
     }
+    '/use-context-extra-re-render-limitations/solution1/': {
+      id: '/use-context-extra-re-render-limitations/solution1/'
+      path: '/use-context-extra-re-render-limitations/solution1'
+      fullPath: '/use-context-extra-re-render-limitations/solution1'
+      preLoaderRoute: typeof UseContextExtraReRenderLimitationsSolution1IndexImport
+      parentRoute: typeof rootRoute
+    }
     '/use-context-extra-re-render-limitations/solution2/': {
       id: '/use-context-extra-re-render-limitations/solution2/'
       path: '/use-context-extra-re-render-limitations/solution2'
@@ -70,12 +85,14 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
+  '/use-context-extra-re-render-limitations/solution1': typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
   '/use-context-extra-re-render-limitations/solution2': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
+  '/use-context-extra-re-render-limitations/solution1': typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
   '/use-context-extra-re-render-limitations/solution2': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
@@ -83,6 +100,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/use-context-extra-re-render-limitations/': typeof UseContextExtraReRenderLimitationsIndexRoute
+  '/use-context-extra-re-render-limitations/solution1/': typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
   '/use-context-extra-re-render-limitations/solution2/': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
@@ -91,16 +109,19 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/use-context-extra-re-render-limitations'
+    | '/use-context-extra-re-render-limitations/solution1'
     | '/use-context-extra-re-render-limitations/solution2'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/use-context-extra-re-render-limitations'
+    | '/use-context-extra-re-render-limitations/solution1'
     | '/use-context-extra-re-render-limitations/solution2'
   id:
     | '__root__'
     | '/'
     | '/use-context-extra-re-render-limitations/'
+    | '/use-context-extra-re-render-limitations/solution1/'
     | '/use-context-extra-re-render-limitations/solution2/'
   fileRoutesById: FileRoutesById
 }
@@ -108,6 +129,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   UseContextExtraReRenderLimitationsIndexRoute: typeof UseContextExtraReRenderLimitationsIndexRoute
+  UseContextExtraReRenderLimitationsSolution1IndexRoute: typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
   UseContextExtraReRenderLimitationsSolution2IndexRoute: typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
 }
 
@@ -115,6 +137,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   UseContextExtraReRenderLimitationsIndexRoute:
     UseContextExtraReRenderLimitationsIndexRoute,
+  UseContextExtraReRenderLimitationsSolution1IndexRoute:
+    UseContextExtraReRenderLimitationsSolution1IndexRoute,
   UseContextExtraReRenderLimitationsSolution2IndexRoute:
     UseContextExtraReRenderLimitationsSolution2IndexRoute,
 }
@@ -131,6 +155,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/use-context-extra-re-render-limitations/",
+        "/use-context-extra-re-render-limitations/solution1/",
         "/use-context-extra-re-render-limitations/solution2/"
       ]
     },
@@ -139,6 +164,9 @@ export const routeTree = rootRoute
     },
     "/use-context-extra-re-render-limitations/": {
       "filePath": "use-context-extra-re-render-limitations/index.tsx"
+    },
+    "/use-context-extra-re-render-limitations/solution1/": {
+      "filePath": "use-context-extra-re-render-limitations/solution1/index.tsx"
     },
     "/use-context-extra-re-render-limitations/solution2/": {
       "filePath": "use-context-extra-re-render-limitations/solution2/index.tsx"
