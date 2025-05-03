@@ -22,10 +22,10 @@ export default function Header() {
       </div>
       <div className="flex gap-2">
         <Link
-          to="/use-context-extra-re-render-limitations"
+          to="/sharing-component-state-with-context"
           className="bg-amber-400 px-2 py-1"
         >
-          Example 1
+          Chapter 2: Sharing Component State with Context
         </Link>
       </div>
     </div>

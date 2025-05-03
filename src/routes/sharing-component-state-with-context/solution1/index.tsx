@@ -4,7 +4,7 @@ import Provider from "./.components/Provider";
 import Parent from "./.components/Parent";
 
 export const Route = createFileRoute(
-  "/use-context-extra-re-render-limitations/solution1/"
+  "/sharing-component-state-with-context/solution1/"
 )({
   component: RouteComponent,
 });

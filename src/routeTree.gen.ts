@@ -12,9 +12,10 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
-import { Route as UseContextExtraReRenderLimitationsIndexImport } from './routes/use-context-extra-re-render-limitations/index'
-import { Route as UseContextExtraReRenderLimitationsSolution2IndexImport } from './routes/use-context-extra-re-render-limitations/solution2/index'
-import { Route as UseContextExtraReRenderLimitationsSolution1IndexImport } from './routes/use-context-extra-re-render-limitations/solution1/index'
+import { Route as SharingComponentStateWithContextIndexImport } from './routes/sharing-component-state-with-context/index'
+import { Route as SharingComponentStateWithContextSolution2IndexImport } from './routes/sharing-component-state-with-context/solution2/index'
+import { Route as SharingComponentStateWithContextSolution1IndexImport } from './routes/sharing-component-state-with-context/solution1/index'
+import { Route as SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexImport } from './routes/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/index'
 
 // Create/Update Routes
 
@@ -24,26 +25,35 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const UseContextExtraReRenderLimitationsIndexRoute =
-  UseContextExtraReRenderLimitationsIndexImport.update({
-    id: '/use-context-extra-re-render-limitations/',
-    path: '/use-context-extra-re-render-limitations/',
+const SharingComponentStateWithContextIndexRoute =
+  SharingComponentStateWithContextIndexImport.update({
+    id: '/sharing-component-state-with-context/',
+    path: '/sharing-component-state-with-context/',
     getParentRoute: () => rootRoute,
   } as any)
 
-const UseContextExtraReRenderLimitationsSolution2IndexRoute =
-  UseContextExtraReRenderLimitationsSolution2IndexImport.update({
-    id: '/use-context-extra-re-render-limitations/solution2/',
-    path: '/use-context-extra-re-render-limitations/solution2/',
+const SharingComponentStateWithContextSolution2IndexRoute =
+  SharingComponentStateWithContextSolution2IndexImport.update({
+    id: '/sharing-component-state-with-context/solution2/',
+    path: '/sharing-component-state-with-context/solution2/',
     getParentRoute: () => rootRoute,
   } as any)
 
-const UseContextExtraReRenderLimitationsSolution1IndexRoute =
-  UseContextExtraReRenderLimitationsSolution1IndexImport.update({
-    id: '/use-context-extra-re-render-limitations/solution1/',
-    path: '/use-context-extra-re-render-limitations/solution1/',
+const SharingComponentStateWithContextSolution1IndexRoute =
+  SharingComponentStateWithContextSolution1IndexImport.update({
+    id: '/sharing-component-state-with-context/solution1/',
+    path: '/sharing-component-state-with-context/solution1/',
     getParentRoute: () => rootRoute,
   } as any)
+
+const SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute =
+  SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexImport.update(
+    {
+      id: '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/',
+      path: '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/',
+      getParentRoute: () => rootRoute,
+    } as any,
+  )
 
 // Populate the FileRoutesByPath interface
 
@@ -56,25 +66,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/use-context-extra-re-render-limitations/': {
-      id: '/use-context-extra-re-render-limitations/'
-      path: '/use-context-extra-re-render-limitations'
-      fullPath: '/use-context-extra-re-render-limitations'
-      preLoaderRoute: typeof UseContextExtraReRenderLimitationsIndexImport
+    '/sharing-component-state-with-context/': {
+      id: '/sharing-component-state-with-context/'
+      path: '/sharing-component-state-with-context'
+      fullPath: '/sharing-component-state-with-context'
+      preLoaderRoute: typeof SharingComponentStateWithContextIndexImport
       parentRoute: typeof rootRoute
     }
-    '/use-context-extra-re-render-limitations/solution1/': {
-      id: '/use-context-extra-re-render-limitations/solution1/'
-      path: '/use-context-extra-re-render-limitations/solution1'
-      fullPath: '/use-context-extra-re-render-limitations/solution1'
-      preLoaderRoute: typeof UseContextExtraReRenderLimitationsSolution1IndexImport
+    '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/': {
+      id: '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/'
+      path: '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
+      fullPath: '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
+      preLoaderRoute: typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexImport
       parentRoute: typeof rootRoute
     }
-    '/use-context-extra-re-render-limitations/solution2/': {
-      id: '/use-context-extra-re-render-limitations/solution2/'
-      path: '/use-context-extra-re-render-limitations/solution2'
-      fullPath: '/use-context-extra-re-render-limitations/solution2'
-      preLoaderRoute: typeof UseContextExtraReRenderLimitationsSolution2IndexImport
+    '/sharing-component-state-with-context/solution1/': {
+      id: '/sharing-component-state-with-context/solution1/'
+      path: '/sharing-component-state-with-context/solution1'
+      fullPath: '/sharing-component-state-with-context/solution1'
+      preLoaderRoute: typeof SharingComponentStateWithContextSolution1IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/sharing-component-state-with-context/solution2/': {
+      id: '/sharing-component-state-with-context/solution2/'
+      path: '/sharing-component-state-with-context/solution2'
+      fullPath: '/sharing-component-state-with-context/solution2'
+      preLoaderRoute: typeof SharingComponentStateWithContextSolution2IndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -84,63 +101,72 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
-  '/use-context-extra-re-render-limitations/solution1': typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
-  '/use-context-extra-re-render-limitations/solution2': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
+  '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
+  '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  '/sharing-component-state-with-context/solution1': typeof SharingComponentStateWithContextSolution1IndexRoute
+  '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/use-context-extra-re-render-limitations': typeof UseContextExtraReRenderLimitationsIndexRoute
-  '/use-context-extra-re-render-limitations/solution1': typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
-  '/use-context-extra-re-render-limitations/solution2': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
+  '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
+  '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  '/sharing-component-state-with-context/solution1': typeof SharingComponentStateWithContextSolution1IndexRoute
+  '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/use-context-extra-re-render-limitations/': typeof UseContextExtraReRenderLimitationsIndexRoute
-  '/use-context-extra-re-render-limitations/solution1/': typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
-  '/use-context-extra-re-render-limitations/solution2/': typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
+  '/sharing-component-state-with-context/': typeof SharingComponentStateWithContextIndexRoute
+  '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  '/sharing-component-state-with-context/solution1/': typeof SharingComponentStateWithContextSolution1IndexRoute
+  '/sharing-component-state-with-context/solution2/': typeof SharingComponentStateWithContextSolution2IndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/use-context-extra-re-render-limitations'
-    | '/use-context-extra-re-render-limitations/solution1'
-    | '/use-context-extra-re-render-limitations/solution2'
+    | '/sharing-component-state-with-context'
+    | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
+    | '/sharing-component-state-with-context/solution1'
+    | '/sharing-component-state-with-context/solution2'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/use-context-extra-re-render-limitations'
-    | '/use-context-extra-re-render-limitations/solution1'
-    | '/use-context-extra-re-render-limitations/solution2'
+    | '/sharing-component-state-with-context'
+    | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
+    | '/sharing-component-state-with-context/solution1'
+    | '/sharing-component-state-with-context/solution2'
   id:
     | '__root__'
     | '/'
-    | '/use-context-extra-re-render-limitations/'
-    | '/use-context-extra-re-render-limitations/solution1/'
-    | '/use-context-extra-re-render-limitations/solution2/'
+    | '/sharing-component-state-with-context/'
+    | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/'
+    | '/sharing-component-state-with-context/solution1/'
+    | '/sharing-component-state-with-context/solution2/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  UseContextExtraReRenderLimitationsIndexRoute: typeof UseContextExtraReRenderLimitationsIndexRoute
-  UseContextExtraReRenderLimitationsSolution1IndexRoute: typeof UseContextExtraReRenderLimitationsSolution1IndexRoute
-  UseContextExtraReRenderLimitationsSolution2IndexRoute: typeof UseContextExtraReRenderLimitationsSolution2IndexRoute
+  SharingComponentStateWithContextIndexRoute: typeof SharingComponentStateWithContextIndexRoute
+  SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute: typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  SharingComponentStateWithContextSolution1IndexRoute: typeof SharingComponentStateWithContextSolution1IndexRoute
+  SharingComponentStateWithContextSolution2IndexRoute: typeof SharingComponentStateWithContextSolution2IndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  UseContextExtraReRenderLimitationsIndexRoute:
-    UseContextExtraReRenderLimitationsIndexRoute,
-  UseContextExtraReRenderLimitationsSolution1IndexRoute:
-    UseContextExtraReRenderLimitationsSolution1IndexRoute,
-  UseContextExtraReRenderLimitationsSolution2IndexRoute:
-    UseContextExtraReRenderLimitationsSolution2IndexRoute,
+  SharingComponentStateWithContextIndexRoute:
+    SharingComponentStateWithContextIndexRoute,
+  SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute:
+    SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute,
+  SharingComponentStateWithContextSolution1IndexRoute:
+    SharingComponentStateWithContextSolution1IndexRoute,
+  SharingComponentStateWithContextSolution2IndexRoute:
+    SharingComponentStateWithContextSolution2IndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -154,22 +180,26 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/use-context-extra-re-render-limitations/",
-        "/use-context-extra-re-render-limitations/solution1/",
-        "/use-context-extra-re-render-limitations/solution2/"
+        "/sharing-component-state-with-context/",
+        "/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/",
+        "/sharing-component-state-with-context/solution1/",
+        "/sharing-component-state-with-context/solution2/"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/use-context-extra-re-render-limitations/": {
-      "filePath": "use-context-extra-re-render-limitations/index.tsx"
+    "/sharing-component-state-with-context/": {
+      "filePath": "sharing-component-state-with-context/index.tsx"
     },
-    "/use-context-extra-re-render-limitations/solution1/": {
-      "filePath": "use-context-extra-re-render-limitations/solution1/index.tsx"
+    "/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/": {
+      "filePath": "sharing-component-state-with-context/creating-custom-hooks-and-provider-components/index.tsx"
     },
-    "/use-context-extra-re-render-limitations/solution2/": {
-      "filePath": "use-context-extra-re-render-limitations/solution2/index.tsx"
+    "/sharing-component-state-with-context/solution1/": {
+      "filePath": "sharing-component-state-with-context/solution1/index.tsx"
+    },
+    "/sharing-component-state-with-context/solution2/": {
+      "filePath": "sharing-component-state-with-context/solution2/index.tsx"
     }
   }
 }
