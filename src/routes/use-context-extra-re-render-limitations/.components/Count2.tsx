@@ -1,16 +1,13 @@
-import { memo, useContext, useEffect, useRef } from "react";
+import { memo, useContext } from "react";
 import { CountContext } from "..";
+import RenderCount from "@/components/RenderCount";
 
 export function Count2() {
   const { count2 } = useContext(CountContext);
-  const renderCount = useRef(0);
-  useEffect(() => {
-    renderCount.current++;
-  });
   return (
     <div>
       Count2: {count2}
-      <small> (Render count: {renderCount.current})</small>
+      <RenderCount />
     </div>
   );
 }
