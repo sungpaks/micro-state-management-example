@@ -4,6 +4,7 @@ import ModuleStateExample1 from "./.components/ModuleStateExample1";
 import ModuleStateExample2 from "./.components/ModuleStateExample2";
 import { IconChevronsDown } from "@tabler/icons-react";
 import CreateStoreExample from "./.components/CreateStoreExample";
+import ExampleLink from "@/components/ExampleLink";
 
 export const Route = createFileRoute("/sharing-module-state-with-subscription/")({
   component: RouteComponent,
@@ -21,6 +22,9 @@ function RouteComponent() {
       </ExampleWrapper>
       <ExampleWrapper title="Adding a basic Subscription">
         <CreateStoreExample />
+        <ExampleLink to="/sharing-module-state-with-subscription/working-with-a-selector">
+          Solution1: Working with a selector
+        </ExampleLink>
       </ExampleWrapper>
     </>
   );
