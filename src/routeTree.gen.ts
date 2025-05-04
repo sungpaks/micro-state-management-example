@@ -15,6 +15,7 @@ import { Route as IndexImport } from './routes/index'
 import { Route as SharingComponentStateWithContextIndexImport } from './routes/sharing-component-state-with-context/index'
 import { Route as SharingComponentStateWithContextSolution2IndexImport } from './routes/sharing-component-state-with-context/solution2/index'
 import { Route as SharingComponentStateWithContextSolution1IndexImport } from './routes/sharing-component-state-with-context/solution1/index'
+import { Route as SharingComponentStateWithContextFactoryPatternWithACustomHookIndexImport } from './routes/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/index'
 import { Route as SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexImport } from './routes/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/index'
 
 // Create/Update Routes
@@ -45,6 +46,15 @@ const SharingComponentStateWithContextSolution1IndexRoute =
     path: '/sharing-component-state-with-context/solution1/',
     getParentRoute: () => rootRoute,
   } as any)
+
+const SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute =
+  SharingComponentStateWithContextFactoryPatternWithACustomHookIndexImport.update(
+    {
+      id: '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/',
+      path: '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/',
+      getParentRoute: () => rootRoute,
+    } as any,
+  )
 
 const SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute =
   SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexImport.update(
@@ -80,6 +90,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexImport
       parentRoute: typeof rootRoute
     }
+    '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/': {
+      id: '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/'
+      path: '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook'
+      fullPath: '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook'
+      preLoaderRoute: typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/sharing-component-state-with-context/solution1/': {
       id: '/sharing-component-state-with-context/solution1/'
       path: '/sharing-component-state-with-context/solution1'
@@ -103,6 +120,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
   '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook': typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
   '/sharing-component-state-with-context/solution1': typeof SharingComponentStateWithContextSolution1IndexRoute
   '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
 }
@@ -111,6 +129,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
   '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook': typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
   '/sharing-component-state-with-context/solution1': typeof SharingComponentStateWithContextSolution1IndexRoute
   '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
 }
@@ -120,6 +139,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/sharing-component-state-with-context/': typeof SharingComponentStateWithContextIndexRoute
   '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/': typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
   '/sharing-component-state-with-context/solution1/': typeof SharingComponentStateWithContextSolution1IndexRoute
   '/sharing-component-state-with-context/solution2/': typeof SharingComponentStateWithContextSolution2IndexRoute
 }
@@ -130,6 +150,7 @@ export interface FileRouteTypes {
     | '/'
     | '/sharing-component-state-with-context'
     | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
+    | '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook'
     | '/sharing-component-state-with-context/solution1'
     | '/sharing-component-state-with-context/solution2'
   fileRoutesByTo: FileRoutesByTo
@@ -137,6 +158,7 @@ export interface FileRouteTypes {
     | '/'
     | '/sharing-component-state-with-context'
     | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
+    | '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook'
     | '/sharing-component-state-with-context/solution1'
     | '/sharing-component-state-with-context/solution2'
   id:
@@ -144,6 +166,7 @@ export interface FileRouteTypes {
     | '/'
     | '/sharing-component-state-with-context/'
     | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/'
+    | '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/'
     | '/sharing-component-state-with-context/solution1/'
     | '/sharing-component-state-with-context/solution2/'
   fileRoutesById: FileRoutesById
@@ -153,6 +176,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SharingComponentStateWithContextIndexRoute: typeof SharingComponentStateWithContextIndexRoute
   SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute: typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
+  SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute: typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
   SharingComponentStateWithContextSolution1IndexRoute: typeof SharingComponentStateWithContextSolution1IndexRoute
   SharingComponentStateWithContextSolution2IndexRoute: typeof SharingComponentStateWithContextSolution2IndexRoute
 }
@@ -163,6 +187,8 @@ const rootRouteChildren: RootRouteChildren = {
     SharingComponentStateWithContextIndexRoute,
   SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute:
     SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute,
+  SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute:
+    SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute,
   SharingComponentStateWithContextSolution1IndexRoute:
     SharingComponentStateWithContextSolution1IndexRoute,
   SharingComponentStateWithContextSolution2IndexRoute:
@@ -182,6 +208,7 @@ export const routeTree = rootRoute
         "/",
         "/sharing-component-state-with-context/",
         "/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/",
+        "/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/",
         "/sharing-component-state-with-context/solution1/",
         "/sharing-component-state-with-context/solution2/"
       ]
@@ -194,6 +221,9 @@ export const routeTree = rootRoute
     },
     "/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/": {
       "filePath": "sharing-component-state-with-context/creating-custom-hooks-and-provider-components/index.tsx"
+    },
+    "/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/": {
+      "filePath": "sharing-component-state-with-context/factory-pattern-with-a-custom-hook/index.tsx"
     },
     "/sharing-component-state-with-context/solution1/": {
       "filePath": "sharing-component-state-with-context/solution1/index.tsx"

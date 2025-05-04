@@ -57,6 +57,9 @@ function RouteComponent() {
         <ExampleLink to="/sharing-component-state-with-context/creating-custom-hooks-and-provider-components">
           Creating custom hooks and provider components
         </ExampleLink>
+        <ExampleLink to="/sharing-component-state-with-context/factory-pattern-with-a-custom-hook">
+          Factory pattern with a custom hook
+        </ExampleLink>
       </ExampleWrapper>
     </CountContext.Provider>
   );
