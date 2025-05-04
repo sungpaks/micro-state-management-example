@@ -1,6 +1,6 @@
 import Button from "@/components/Button";
 import ExampleWrapper from "@/components/ExampleWrapper";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { createContext, useState } from "react";
 import Parent from "./.components/Parent";
 import ExampleLink from "@/components/ExampleLink";
@@ -39,16 +39,12 @@ function RouteComponent() {
         <Button onClick={() => setCount2(count2 + 1)}>Increment count2</Button>
         <Parent />
         <br />
-        <p>
-          Context의 값으로 이렇게 객체를 쓰거나 하면 불필요한 리렌더링을 유발할
-          수 있어요
-        </p>
+        <p>Context의 값으로 이렇게 객체를 쓰거나 하면 불필요한 리렌더링을 유발할 수 있어요</p>
         <ExampleLink to="/sharing-component-state-with-context/solution1">
           Solution 1: Creating small state pieces
         </ExampleLink>
         <ExampleLink to="/sharing-component-state-with-context/solution2">
-          Solution 2: Creating one state with useReducer and propagating
-          multiple Contexts
+          Solution 2: Creating one state with useReducer and propagating multiple Contexts
         </ExampleLink>
       </ExampleWrapper>
 

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { CountContext1 } from "./Provider";
 import Button from "@/components/Button";
 import RenderCount from "@/components/RenderCount";

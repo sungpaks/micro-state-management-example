@@ -1,4 +1,3 @@
-import { IconArrowDown } from "@tabler/icons-react";
 import Counter1 from "./Counter1";
 import Counter2 from "./Counter2";
 import ExampleLink from "@/components/ExampleLink";
