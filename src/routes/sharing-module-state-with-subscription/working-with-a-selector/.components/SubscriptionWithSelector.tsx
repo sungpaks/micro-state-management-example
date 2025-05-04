@@ -2,6 +2,7 @@ import Button from "@/components/Button";
 import { store } from "../../.lib/store";
 import useStoreSelector from "../.hooks/useStoreSelector";
 import RenderCount from "@/components/RenderCount";
+import ExampleLink from "@/components/ExampleLink";
 
 const selectCount = (state: ReturnType<typeof store.getState>) => state.count;
 const selectName = (state: ReturnType<typeof store.getState>) => state.name;
@@ -54,6 +55,16 @@ export default function SubscriptionWithSelector() {
         <br />
         그렇지 않으면 컴포넌트가 렌더링될 때마다 매번 <code>{`store`}</code>를 새로 구독하게 됩니다.
       </p>
+      <br />
+      <p>
+        이 구현에는 작은 문제가 있습니다: <br />
+        <code>store</code>또는 <code>selector</code>가 변경된 경우, <code>useEffect</code>의 실행은 조금 뒤에
+        이루어지므로
+        <br />
+        재구독이 완료되기 전까지 stale한 상태값을 반환할 수 있다는 점입니다.
+      </p>
+      <p>이를 직접 수정해볼 수 있지만, 기술적인 노력이 필요합니다. 대신 더 간단한 해결책을 다음 섹션에서 알아봅니다.</p>
+      <ExampleLink to="/sharing-module-state-with-subscription/working-with-use-subscription">다음</ExampleLink>
     </>
   );
 }

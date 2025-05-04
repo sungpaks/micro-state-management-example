@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as SharingModuleStateWithSubscriptionIndexImport } from './routes/sharing-module-state-with-subscription/index'
 import { Route as SharingComponentStateWithContextIndexImport } from './routes/sharing-component-state-with-context/index'
+import { Route as SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexImport } from './routes/sharing-module-state-with-subscription/working-with-use-subscription/index'
 import { Route as SharingModuleStateWithSubscriptionWorkingWithASelectorIndexImport } from './routes/sharing-module-state-with-subscription/working-with-a-selector/index'
 import { Route as SharingComponentStateWithContextSolution2IndexImport } from './routes/sharing-component-state-with-context/solution2/index'
 import { Route as SharingComponentStateWithContextSolution1IndexImport } from './routes/sharing-component-state-with-context/solution1/index'
@@ -42,6 +43,15 @@ const SharingComponentStateWithContextIndexRoute =
     path: '/sharing-component-state-with-context/',
     getParentRoute: () => rootRoute,
   } as any)
+
+const SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute =
+  SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexImport.update(
+    {
+      id: '/sharing-module-state-with-subscription/working-with-use-subscription/',
+      path: '/sharing-module-state-with-subscription/working-with-use-subscription/',
+      getParentRoute: () => rootRoute,
+    } as any,
+  )
 
 const SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute =
   SharingModuleStateWithSubscriptionWorkingWithASelectorIndexImport.update({
@@ -158,6 +168,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexImport
       parentRoute: typeof rootRoute
     }
+    '/sharing-module-state-with-subscription/working-with-use-subscription/': {
+      id: '/sharing-module-state-with-subscription/working-with-use-subscription/'
+      path: '/sharing-module-state-with-subscription/working-with-use-subscription'
+      fullPath: '/sharing-module-state-with-subscription/working-with-use-subscription'
+      preLoaderRoute: typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -173,6 +190,7 @@ export interface FileRoutesByFullPath {
   '/sharing-component-state-with-context/solution1': typeof SharingComponentStateWithContextSolution1IndexRoute
   '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
   '/sharing-module-state-with-subscription/working-with-a-selector': typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
+  '/sharing-module-state-with-subscription/working-with-use-subscription': typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -185,6 +203,7 @@ export interface FileRoutesByTo {
   '/sharing-component-state-with-context/solution1': typeof SharingComponentStateWithContextSolution1IndexRoute
   '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
   '/sharing-module-state-with-subscription/working-with-a-selector': typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
+  '/sharing-module-state-with-subscription/working-with-use-subscription': typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
 }
 
 export interface FileRoutesById {
@@ -198,6 +217,7 @@ export interface FileRoutesById {
   '/sharing-component-state-with-context/solution1/': typeof SharingComponentStateWithContextSolution1IndexRoute
   '/sharing-component-state-with-context/solution2/': typeof SharingComponentStateWithContextSolution2IndexRoute
   '/sharing-module-state-with-subscription/working-with-a-selector/': typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
+  '/sharing-module-state-with-subscription/working-with-use-subscription/': typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -212,6 +232,7 @@ export interface FileRouteTypes {
     | '/sharing-component-state-with-context/solution1'
     | '/sharing-component-state-with-context/solution2'
     | '/sharing-module-state-with-subscription/working-with-a-selector'
+    | '/sharing-module-state-with-subscription/working-with-use-subscription'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -223,6 +244,7 @@ export interface FileRouteTypes {
     | '/sharing-component-state-with-context/solution1'
     | '/sharing-component-state-with-context/solution2'
     | '/sharing-module-state-with-subscription/working-with-a-selector'
+    | '/sharing-module-state-with-subscription/working-with-use-subscription'
   id:
     | '__root__'
     | '/'
@@ -234,6 +256,7 @@ export interface FileRouteTypes {
     | '/sharing-component-state-with-context/solution1/'
     | '/sharing-component-state-with-context/solution2/'
     | '/sharing-module-state-with-subscription/working-with-a-selector/'
+    | '/sharing-module-state-with-subscription/working-with-use-subscription/'
   fileRoutesById: FileRoutesById
 }
 
@@ -247,6 +270,7 @@ export interface RootRouteChildren {
   SharingComponentStateWithContextSolution1IndexRoute: typeof SharingComponentStateWithContextSolution1IndexRoute
   SharingComponentStateWithContextSolution2IndexRoute: typeof SharingComponentStateWithContextSolution2IndexRoute
   SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute: typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
+  SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute: typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -267,6 +291,8 @@ const rootRouteChildren: RootRouteChildren = {
     SharingComponentStateWithContextSolution2IndexRoute,
   SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute:
     SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute,
+  SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute:
+    SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -287,7 +313,8 @@ export const routeTree = rootRoute
         "/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/",
         "/sharing-component-state-with-context/solution1/",
         "/sharing-component-state-with-context/solution2/",
-        "/sharing-module-state-with-subscription/working-with-a-selector/"
+        "/sharing-module-state-with-subscription/working-with-a-selector/",
+        "/sharing-module-state-with-subscription/working-with-use-subscription/"
       ]
     },
     "/": {
@@ -316,6 +343,9 @@ export const routeTree = rootRoute
     },
     "/sharing-module-state-with-subscription/working-with-a-selector/": {
       "filePath": "sharing-module-state-with-subscription/working-with-a-selector/index.tsx"
+    },
+    "/sharing-module-state-with-subscription/working-with-use-subscription/": {
+      "filePath": "sharing-module-state-with-subscription/working-with-use-subscription/index.tsx"
     }
   }
 }

@@ -25,6 +25,9 @@ function RouteComponent() {
         <ExampleLink to="/sharing-module-state-with-subscription/working-with-a-selector">
           Solution1: Working with a selector
         </ExampleLink>
+        <ExampleLink to="/sharing-module-state-with-subscription/working-with-use-subscription">
+          Solution2: Working with useSubscription
+        </ExampleLink>
       </ExampleWrapper>
     </>
   );

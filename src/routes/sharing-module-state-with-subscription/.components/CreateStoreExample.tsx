@@ -39,7 +39,7 @@ export default function CreateStoreExample() {
       <NameComponent />
       <img src="https://i.imgur.com/Odz3mOh.png" alt="createStore 예제 코드" />
       <p>
-        Module State + Subscription의 구현을 위해 위와 같이 <code>{`createStore`}</code>함수를 만들었습니다.
+        Module State + Subscription을 좀 더 현실적으로 구현하고자 <code>{`createStore`}</code>함수를 만들었습니다.
       </p>
       <p>
         <code>{`store`}</code>는 내부에 상태값을 유지하고, <code>{`getState, setState, subscribe`}</code>를 메서드로
