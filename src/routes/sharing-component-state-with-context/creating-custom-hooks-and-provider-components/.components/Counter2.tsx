@@ -6,7 +6,7 @@ export default function Counter2() {
   const [count, setCount] = useCount2();
   return (
     <div>
-      Count1: {count}
+      Count2: {count}
       <RenderCount />
       <Button onClick={() => setCount(count + 1)}>+1</Button>
     </div>
