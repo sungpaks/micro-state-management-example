@@ -21,11 +21,11 @@ export default function Header() {
         </div>
       </div>
       <div className="flex gap-2">
-        <Link
-          to="/sharing-component-state-with-context"
-          className="bg-amber-400 px-2 py-1"
-        >
-          Chapter 2: Sharing Component State with Context
+        <Link to="/sharing-component-state-with-context" className="bg-amber-400 px-2 py-1">
+          Chapter 3
+        </Link>
+        <Link to="/sharing-module-state-with-subscription" className="bg-amber-400 px-2 py-1">
+          Chapter 4
         </Link>
       </div>
     </div>

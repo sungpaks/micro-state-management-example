@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
+import { Route as SharingModuleStateWithSubscriptionIndexImport } from './routes/sharing-module-state-with-subscription/index'
 import { Route as SharingComponentStateWithContextIndexImport } from './routes/sharing-component-state-with-context/index'
 import { Route as SharingComponentStateWithContextSolution2IndexImport } from './routes/sharing-component-state-with-context/solution2/index'
 import { Route as SharingComponentStateWithContextSolution1IndexImport } from './routes/sharing-component-state-with-context/solution1/index'
@@ -26,6 +27,13 @@ const IndexRoute = IndexImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any)
+
+const SharingModuleStateWithSubscriptionIndexRoute =
+  SharingModuleStateWithSubscriptionIndexImport.update({
+    id: '/sharing-module-state-with-subscription/',
+    path: '/sharing-module-state-with-subscription/',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const SharingComponentStateWithContextIndexRoute =
   SharingComponentStateWithContextIndexImport.update({
@@ -93,6 +101,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SharingComponentStateWithContextIndexImport
       parentRoute: typeof rootRoute
     }
+    '/sharing-module-state-with-subscription/': {
+      id: '/sharing-module-state-with-subscription/'
+      path: '/sharing-module-state-with-subscription'
+      fullPath: '/sharing-module-state-with-subscription'
+      preLoaderRoute: typeof SharingModuleStateWithSubscriptionIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/': {
       id: '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/'
       path: '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right'
@@ -136,6 +151,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
+  '/sharing-module-state-with-subscription': typeof SharingModuleStateWithSubscriptionIndexRoute
   '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right': typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
   '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
   '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook': typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
@@ -146,6 +162,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
+  '/sharing-module-state-with-subscription': typeof SharingModuleStateWithSubscriptionIndexRoute
   '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right': typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
   '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
   '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook': typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
@@ -157,6 +174,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/sharing-component-state-with-context/': typeof SharingComponentStateWithContextIndexRoute
+  '/sharing-module-state-with-subscription/': typeof SharingModuleStateWithSubscriptionIndexRoute
   '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/': typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
   '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/': typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
   '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/': typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
@@ -169,6 +187,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/sharing-component-state-with-context'
+    | '/sharing-module-state-with-subscription'
     | '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right'
     | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
     | '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook'
@@ -178,6 +197,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/sharing-component-state-with-context'
+    | '/sharing-module-state-with-subscription'
     | '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right'
     | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components'
     | '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook'
@@ -187,6 +207,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/sharing-component-state-with-context/'
+    | '/sharing-module-state-with-subscription/'
     | '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/'
     | '/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/'
     | '/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/'
@@ -198,6 +219,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SharingComponentStateWithContextIndexRoute: typeof SharingComponentStateWithContextIndexRoute
+  SharingModuleStateWithSubscriptionIndexRoute: typeof SharingModuleStateWithSubscriptionIndexRoute
   SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute: typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
   SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute: typeof SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute
   SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute: typeof SharingComponentStateWithContextFactoryPatternWithACustomHookIndexRoute
@@ -209,6 +231,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SharingComponentStateWithContextIndexRoute:
     SharingComponentStateWithContextIndexRoute,
+  SharingModuleStateWithSubscriptionIndexRoute:
+    SharingModuleStateWithSubscriptionIndexRoute,
   SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute:
     SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute,
   SharingComponentStateWithContextCreatingCustomHooksAndProviderComponentsIndexRoute:
@@ -233,6 +257,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/sharing-component-state-with-context/",
+        "/sharing-module-state-with-subscription/",
         "/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/",
         "/sharing-component-state-with-context/creating-custom-hooks-and-provider-components/",
         "/sharing-component-state-with-context/factory-pattern-with-a-custom-hook/",
@@ -245,6 +270,9 @@ export const routeTree = rootRoute
     },
     "/sharing-component-state-with-context/": {
       "filePath": "sharing-component-state-with-context/index.tsx"
+    },
+    "/sharing-module-state-with-subscription/": {
+      "filePath": "sharing-module-state-with-subscription/index.tsx"
     },
     "/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/": {
       "filePath": "sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/index.tsx"

@@ -24,7 +24,8 @@ function RouteComponent() {
 
   return (
     <CountContext.Provider value={{ count1, count2 }}>
-      <h1 className="text-xl mt-8">Context를 사용해 컴포넌트 간에 상태를 공유하는 방법을 알아봅니다.</h1>
+      <h1 className="text-xl mt-8">Sharing Component State with Context</h1>
+      <h2>Context를 사용해 컴포넌트 간에 상태를 공유하는 방법을 알아봅니다.</h2>
       <ExampleWrapper title="useContext : extra re-render limitations">
         <Button onClick={() => setCount1(count1 + 1)}>Increment count1</Button>
         <Button onClick={() => setCount2(count2 + 1)}>Increment count2</Button>
