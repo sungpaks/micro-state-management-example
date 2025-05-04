@@ -24,21 +24,13 @@ function RouteComponent() {
 
   return (
     <CountContext.Provider value={{ count1, count2 }}>
+      <h1 className="text-xl mt-8">Context를 사용해 컴포넌트 간에 상태를 공유하는 방법을 알아봅니다.</h1>
       <ExampleWrapper title="useContext : extra re-render limitations">
-        <div>
-          <code>
-            {`
-            export const CountContext = createContext({
-  count1: 0,
-  count2: 0,
-});
-            `}
-          </code>
-        </div>
         <Button onClick={() => setCount1(count1 + 1)}>Increment count1</Button>
         <Button onClick={() => setCount2(count2 + 1)}>Increment count2</Button>
         <Parent />
         <br />
+        <img src="https://i.imgur.com/ue2ejZl.png" alt="useContext : extra re-render limitations" />
         <p>Context의 값으로 이렇게 객체를 쓰거나 하면 불필요한 리렌더링을 유발할 수 있어요</p>
         <ExampleLink to="/sharing-component-state-with-context/solution1">
           Solution 1: Creating small state pieces
@@ -49,7 +41,7 @@ function RouteComponent() {
       </ExampleWrapper>
 
       <ExampleWrapper title="Best practices for using Context">
-        Context를 잘 사용하는 잡기술들
+        Context를 더 잘 사용하는 잡기술들을 알아봅니다.
         <ExampleLink to="/sharing-component-state-with-context/creating-custom-hooks-and-provider-components">
           Creating custom hooks and provider components
         </ExampleLink>
