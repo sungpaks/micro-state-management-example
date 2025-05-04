@@ -14,7 +14,7 @@ const createStateContext = <Value, State>(
     children,
   }: {
     initialValue?: Value;
-    children: ReactNode;
+    children?: ReactNode;
   }) => <StateContext.Provider value={useValue(initialValue)}>{children}</StateContext.Provider>;
 
   // Context의 값을 뱉는 커스텀훅
