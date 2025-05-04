@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import ModuleStateExample1 from "./.components/ModuleStateExample1";
 import ModuleStateExample2 from "./.components/ModuleStateExample2";
 import { IconChevronsDown } from "@tabler/icons-react";
+import CreateStoreExample from "./.components/CreateStoreExample";
 
 export const Route = createFileRoute("/sharing-module-state-with-subscription/")({
   component: RouteComponent,
@@ -17,6 +18,9 @@ function RouteComponent() {
         <ModuleStateExample1 />
         <IconChevronsDown className="text-amber-700 w-10 h-5 scale-x-150" />
         <ModuleStateExample2 />
+      </ExampleWrapper>
+      <ExampleWrapper title="Adding a basic Subscription">
+        <CreateStoreExample />
       </ExampleWrapper>
     </>
   );
