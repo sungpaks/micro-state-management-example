@@ -1,44 +1,20 @@
-import Button from "@/components/Button";
 import ExampleWrapper from "@/components/ExampleWrapper";
 import { createFileRoute } from "@tanstack/react-router";
 import { createContext, useState } from "react";
-import Parent from "./.components/Parent";
 import ExampleLink from "@/components/ExampleLink";
+import ExtraRerenderProblemExample from "./.components/ExtraRerenderProblemExample";
 
 export const Route = createFileRoute("/sharing-component-state-with-context/")({
   component: RouteComponent,
 });
 
-type CountContextType = {
-  count1: number;
-  count2: number;
-};
-export const CountContext = createContext<CountContextType>({
-  count1: 0,
-  count2: 0,
-});
-
 function RouteComponent() {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
-
   return (
-    <CountContext.Provider value={{ count1, count2 }}>
+    <>
       <h1 className="text-xl mt-8">Sharing Component State with Context</h1>
       <h2>Context를 사용해 컴포넌트 간에 상태를 공유하는 방법을 알아봅니다.</h2>
       <ExampleWrapper title="useContext : extra re-render limitations">
-        <Button onClick={() => setCount1(count1 + 1)}>Increment count1</Button>
-        <Button onClick={() => setCount2(count2 + 1)}>Increment count2</Button>
-        <Parent />
-        <br />
-        <img src="https://i.imgur.com/ue2ejZl.png" alt="useContext : extra re-render limitations" />
-        <p>Context의 값으로 이렇게 객체를 쓰거나 하면 불필요한 리렌더링을 유발할 수 있어요</p>
-        <ExampleLink to="/sharing-component-state-with-context/solution1">
-          Solution 1: Creating small state pieces
-        </ExampleLink>
-        <ExampleLink to="/sharing-component-state-with-context/solution2">
-          Solution 2: Creating one state with useReducer and propagating multiple Contexts
-        </ExampleLink>
+        <ExtraRerenderProblemExample />
       </ExampleWrapper>
 
       <ExampleWrapper title="Best practices for using Context">
@@ -50,6 +26,6 @@ function RouteComponent() {
           Factory pattern with a custom hook
         </ExampleLink>
       </ExampleWrapper>
-    </CountContext.Provider>
+    </>
   );
 }

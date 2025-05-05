@@ -7,7 +7,7 @@ export const Route = createFileRoute("/")({
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <h1>Micro State Management with React Hooks</h1>
     </div>
   );
 }
