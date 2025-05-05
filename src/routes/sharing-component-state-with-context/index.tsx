@@ -1,8 +1,10 @@
 import ExampleWrapper from "@/components/ExampleWrapper";
 import { createFileRoute } from "@tanstack/react-router";
-import { createContext, useState } from "react";
 import ExampleLink from "@/components/ExampleLink";
 import ExtraRerenderProblemExample from "./.components/ExtraRerenderProblemExample";
+import BenefitOfContextExample from "./.components/BenefitOfContextExample";
+import ContextWithStaticValueExample from "./.components/ContextWithStaticValueExample";
+import ContextWithUseStateExample from "./.components/ContextWithUseStateExample";
 
 export const Route = createFileRoute("/sharing-component-state-with-context/")({
   component: RouteComponent,
@@ -13,6 +15,19 @@ function RouteComponent() {
     <>
       <h1 className="text-xl mt-8">Sharing Component State with Context</h1>
       <h2>Context를 사용해 컴포넌트 간에 상태를 공유하는 방법을 알아봅니다.</h2>
+
+      <ExampleWrapper title="Using useContext Example">
+        <BenefitOfContextExample />
+      </ExampleWrapper>
+
+      <ExampleWrapper title="Using useContext with static value">
+        <ContextWithStaticValueExample />
+      </ExampleWrapper>
+
+      <ExampleWrapper title="Using useContext with useState">
+        <ContextWithUseStateExample />
+      </ExampleWrapper>
+
       <ExampleWrapper title="useContext : extra re-render limitations">
         <ExtraRerenderProblemExample />
       </ExampleWrapper>
