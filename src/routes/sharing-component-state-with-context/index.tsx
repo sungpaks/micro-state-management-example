@@ -20,11 +20,9 @@ function RouteComponent() {
         <BenefitOfContextExample />
       </ExampleWrapper>
 
-      <ExampleWrapper title="Using useContext with static value">
+      <ExampleWrapper title="Using useContext with static value, or useState">
         <ContextWithStaticValueExample />
-      </ExampleWrapper>
-
-      <ExampleWrapper title="Using useContext with useState">
+        <br />
         <ContextWithUseStateExample />
       </ExampleWrapper>
 

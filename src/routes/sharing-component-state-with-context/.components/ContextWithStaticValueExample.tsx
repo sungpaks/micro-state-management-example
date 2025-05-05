@@ -12,18 +12,19 @@ function ContextWithStaticValueExample() {
       <Counter1 />
       <Counter2 />
       <Button onClick={() => setCount((c) => c + 1)}>+1</Button>
+      <p>상태 값만을 전달하여 자식 컴포넌트에서는 값을 조회만 할 수도 있고,</p>
     </CountContext.Provider>
   );
 }
 
 function Counter1() {
   const count = useContext(CountContext);
-  return <div>Count1: {count}</div>;
+  return <div>Count: {count}</div>;
 }
 
 function Counter2() {
   const count = useContext(CountContext);
-  return <div>Count2: {count}</div>;
+  return <div>Count: {count}</div>;
 }
 
 export default ContextWithStaticValueExample;
