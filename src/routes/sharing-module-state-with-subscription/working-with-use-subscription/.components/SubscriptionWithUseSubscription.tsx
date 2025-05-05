@@ -66,7 +66,7 @@ export default function SubscriptionWithUseSubscription() {
       <img src="https://i.imgur.com/CkpDm2U.png" alt="useSubscription을 사용한 예제" />
       <p>
         React Team에서 공식적으로 제공하는{" "}
-        <a href="https://www.npmjs.com/package/use-subscription" target="_blank" className="text-blu-500 underline">
+        <a href="https://www.npmjs.com/package/use-subscription" target="_blank" className="text-blue-500 underline">
           <IconExternalLink width={16} height={16} className="inline-block" />
           <code>{`useSubscription`}</code> 훅
         </a>

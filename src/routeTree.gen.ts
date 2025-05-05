@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as SharingModuleStateWithSubscriptionIndexImport } from './routes/sharing-module-state-with-subscription/index'
 import { Route as SharingComponentStateWithContextIndexImport } from './routes/sharing-component-state-with-context/index'
+import { Route as SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexImport } from './routes/sharing-module-state-with-subscription/working-with-use-sync-external-store/index'
 import { Route as SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexImport } from './routes/sharing-module-state-with-subscription/working-with-use-subscription/index'
 import { Route as SharingModuleStateWithSubscriptionWorkingWithASelectorIndexImport } from './routes/sharing-module-state-with-subscription/working-with-a-selector/index'
 import { Route as SharingComponentStateWithContextSolution2IndexImport } from './routes/sharing-component-state-with-context/solution2/index'
@@ -43,6 +44,15 @@ const SharingComponentStateWithContextIndexRoute =
     path: '/sharing-component-state-with-context/',
     getParentRoute: () => rootRoute,
   } as any)
+
+const SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute =
+  SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexImport.update(
+    {
+      id: '/sharing-module-state-with-subscription/working-with-use-sync-external-store/',
+      path: '/sharing-module-state-with-subscription/working-with-use-sync-external-store/',
+      getParentRoute: () => rootRoute,
+    } as any,
+  )
 
 const SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute =
   SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexImport.update(
@@ -175,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexImport
       parentRoute: typeof rootRoute
     }
+    '/sharing-module-state-with-subscription/working-with-use-sync-external-store/': {
+      id: '/sharing-module-state-with-subscription/working-with-use-sync-external-store/'
+      path: '/sharing-module-state-with-subscription/working-with-use-sync-external-store'
+      fullPath: '/sharing-module-state-with-subscription/working-with-use-sync-external-store'
+      preLoaderRoute: typeof SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -191,6 +208,7 @@ export interface FileRoutesByFullPath {
   '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
   '/sharing-module-state-with-subscription/working-with-a-selector': typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
   '/sharing-module-state-with-subscription/working-with-use-subscription': typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
+  '/sharing-module-state-with-subscription/working-with-use-sync-external-store': typeof SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -204,6 +222,7 @@ export interface FileRoutesByTo {
   '/sharing-component-state-with-context/solution2': typeof SharingComponentStateWithContextSolution2IndexRoute
   '/sharing-module-state-with-subscription/working-with-a-selector': typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
   '/sharing-module-state-with-subscription/working-with-use-subscription': typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
+  '/sharing-module-state-with-subscription/working-with-use-sync-external-store': typeof SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute
 }
 
 export interface FileRoutesById {
@@ -218,6 +237,7 @@ export interface FileRoutesById {
   '/sharing-component-state-with-context/solution2/': typeof SharingComponentStateWithContextSolution2IndexRoute
   '/sharing-module-state-with-subscription/working-with-a-selector/': typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
   '/sharing-module-state-with-subscription/working-with-use-subscription/': typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
+  '/sharing-module-state-with-subscription/working-with-use-sync-external-store/': typeof SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -233,6 +253,7 @@ export interface FileRouteTypes {
     | '/sharing-component-state-with-context/solution2'
     | '/sharing-module-state-with-subscription/working-with-a-selector'
     | '/sharing-module-state-with-subscription/working-with-use-subscription'
+    | '/sharing-module-state-with-subscription/working-with-use-sync-external-store'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -245,6 +266,7 @@ export interface FileRouteTypes {
     | '/sharing-component-state-with-context/solution2'
     | '/sharing-module-state-with-subscription/working-with-a-selector'
     | '/sharing-module-state-with-subscription/working-with-use-subscription'
+    | '/sharing-module-state-with-subscription/working-with-use-sync-external-store'
   id:
     | '__root__'
     | '/'
@@ -257,6 +279,7 @@ export interface FileRouteTypes {
     | '/sharing-component-state-with-context/solution2/'
     | '/sharing-module-state-with-subscription/working-with-a-selector/'
     | '/sharing-module-state-with-subscription/working-with-use-subscription/'
+    | '/sharing-module-state-with-subscription/working-with-use-sync-external-store/'
   fileRoutesById: FileRoutesById
 }
 
@@ -271,6 +294,7 @@ export interface RootRouteChildren {
   SharingComponentStateWithContextSolution2IndexRoute: typeof SharingComponentStateWithContextSolution2IndexRoute
   SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute: typeof SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute
   SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute: typeof SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute
+  SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute: typeof SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -293,6 +317,8 @@ const rootRouteChildren: RootRouteChildren = {
     SharingModuleStateWithSubscriptionWorkingWithASelectorIndexRoute,
   SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute:
     SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexRoute,
+  SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute:
+    SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -314,7 +340,8 @@ export const routeTree = rootRoute
         "/sharing-component-state-with-context/solution1/",
         "/sharing-component-state-with-context/solution2/",
         "/sharing-module-state-with-subscription/working-with-a-selector/",
-        "/sharing-module-state-with-subscription/working-with-use-subscription/"
+        "/sharing-module-state-with-subscription/working-with-use-subscription/",
+        "/sharing-module-state-with-subscription/working-with-use-sync-external-store/"
       ]
     },
     "/": {
@@ -346,6 +373,9 @@ export const routeTree = rootRoute
     },
     "/sharing-module-state-with-subscription/working-with-use-subscription/": {
       "filePath": "sharing-module-state-with-subscription/working-with-use-subscription/index.tsx"
+    },
+    "/sharing-module-state-with-subscription/working-with-use-sync-external-store/": {
+      "filePath": "sharing-module-state-with-subscription/working-with-use-sync-external-store/index.tsx"
     }
   }
 }

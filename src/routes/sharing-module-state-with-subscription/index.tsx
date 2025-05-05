@@ -28,6 +28,9 @@ function RouteComponent() {
         <ExampleLink to="/sharing-module-state-with-subscription/working-with-use-subscription">
           Solution2: Working with useSubscription
         </ExampleLink>
+        <ExampleLink to="/sharing-module-state-with-subscription/working-with-use-sync-external-store">
+          Solution3: Working with useSyncExternalStore <i>(React 18+)</i>
+        </ExampleLink>
       </ExampleWrapper>
     </>
   );
