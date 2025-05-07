@@ -8,7 +8,7 @@
     "build": "vite build && tsc",
     "serve": "vite preview",
     "test": "vitest run",
-    "deploy": "git checkout deploy && vite build && tsc && git add . && git commit -m 'deploy'  && git push origin deploy"
+    "deploy": "git checkout deploy && vite build && tsc && git add . && git commit -m 'deploy'  && git push origin deploy && git checkout main"
   },
   "dependencies": {
     "@tabler/icons": "^3.31.0",
