@@ -5,7 +5,7 @@ import {
   Count3Provider,
 } from "../../factory-pattern-with-a-custom-hook/.contexts/count";
 
-export default function Parent({ children }: { children: ReactNode }) {
+export default function CountProviders({ children }: { children: ReactNode }) {
   const providers = [
     [Count1Provider, { initialValue: 10 }],
     [Count2Provider, { initialValue: 20 }],
