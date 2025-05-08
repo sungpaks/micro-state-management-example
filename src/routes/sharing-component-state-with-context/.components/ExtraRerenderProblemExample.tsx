@@ -5,6 +5,10 @@ import ExampleLink from "@/components/ExampleLink";
 
 function Count1() {
   const { count1 } = useContext(CountContext);
+  const renderCount = useRef(0);
+  useEffect(() => {
+    renderCount.current += 1;
+  });
   return (
     <div>
       Count1: {count1}
@@ -15,15 +19,10 @@ function Count1() {
 
 function Count2() {
   const { count2 } = useContext(CountContext);
-  const renderCount = useRef(0);
-  useEffect(() => {
-    renderCount.current += 1;
-  });
   return (
     <div>
       Count2: {count2}
       <RenderCount />
-      <small>renderCount: {renderCount.current}</small>
     </div>
   );
 }
