@@ -1,4 +1,4 @@
-import { createContext, memo, useContext, useState } from "react";
+import { createContext, memo, useContext, useEffect, useRef, useState } from "react";
 import Button from "@/components/Button";
 import RenderCount from "@/components/RenderCount";
 import ExampleLink from "@/components/ExampleLink";
@@ -15,10 +15,15 @@ function Count1() {
 
 function Count2() {
   const { count2 } = useContext(CountContext);
+  const renderCount = useRef(0);
+  useEffect(() => {
+    renderCount.current += 1;
+  });
   return (
     <div>
       Count2: {count2}
       <RenderCount />
+      <small>renderCount: {renderCount.current}</small>
     </div>
   );
 }
