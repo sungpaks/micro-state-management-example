@@ -49,8 +49,8 @@ export default function ExtraRerenderProblemExample() {
   const [count2, setCount2] = useState(0);
   return (
     <CountContext.Provider value={{ count1, count2 }}>
-      <Button onClick={() => setCount1((c) => c + 1)}>Increment count1</Button>
-      <Button onClick={() => setCount2((c) => c + 1)}>Increment count2</Button>
+      <Button onClick={() => setCount1((c) => c + 1)}>count1 +1</Button>
+      <Button onClick={() => setCount2((c) => c + 1)}>count2 +1</Button>
       <Parent />
       <br />
       <img src="https://i.imgur.com/ue2ejZl.png" alt="useContext : extra re-render limitations" />
