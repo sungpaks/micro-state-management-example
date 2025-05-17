@@ -6,18 +6,18 @@ export default function Header() {
   });
 
   return (
-    <div className="sticky top-0 z-10 bg-amber-200 w-full p-2 space-y-2">
+    <div className="sticky top-0 z-10 bg-amber-200 w-full p-2 space-y-4">
       <div className="flex gap-2">
         {pathname !== "/" && (
           <Link to="..">
             <IconChevronLeft className="w-6 h-6" />
           </Link>
         )}
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full flex-col sm:flex-row">
           <h1>
             Micro State Management <small>with React Hooks</small> Example
           </h1>
-          <h2>feat. Tanstack Router</h2>
+          <h2 className="text-sm">feat. Tanstack Router</h2>
         </div>
       </div>
       <div className="flex gap-2">
