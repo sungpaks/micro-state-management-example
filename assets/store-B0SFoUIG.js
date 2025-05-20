@@ -1,0 +1,1 @@
+const n=c=>{let e=c;const s=new Set;return{getState:()=>e,setState:t=>{e=typeof t=="function"?t(e):t,s.forEach(o=>o())},subscribe:t=>(s.add(t),()=>s.delete(t))}},b=n({name:"COUNT",count:10});export{n as c,b as s};
