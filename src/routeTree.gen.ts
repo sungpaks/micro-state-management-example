@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as SharingModuleStateWithSubscriptionIndexImport } from './routes/sharing-module-state-with-subscription/index'
 import { Route as SharingComponentStateWithContextIndexImport } from './routes/sharing-component-state-with-context/index'
+import { Route as SharingComponentStateWithContextAndSubscriptionIndexImport } from './routes/sharing-component-state-with-context-and-subscription/index'
 import { Route as SharingModuleStateWithSubscriptionWorkingWithUseSyncExternalStoreIndexImport } from './routes/sharing-module-state-with-subscription/working-with-use-sync-external-store/index'
 import { Route as SharingModuleStateWithSubscriptionWorkingWithUseSubscriptionIndexImport } from './routes/sharing-module-state-with-subscription/working-with-use-subscription/index'
 import { Route as SharingModuleStateWithSubscriptionWorkingWithASelectorIndexImport } from './routes/sharing-module-state-with-subscription/working-with-a-selector/index'
@@ -42,6 +43,13 @@ const SharingComponentStateWithContextIndexRoute =
   SharingComponentStateWithContextIndexImport.update({
     id: '/sharing-component-state-with-context/',
     path: '/sharing-component-state-with-context/',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const SharingComponentStateWithContextAndSubscriptionIndexRoute =
+  SharingComponentStateWithContextAndSubscriptionIndexImport.update({
+    id: '/sharing-component-state-with-context-and-subscription/',
+    path: '/sharing-component-state-with-context-and-subscription/',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -122,6 +130,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/sharing-component-state-with-context-and-subscription/': {
+      id: '/sharing-component-state-with-context-and-subscription/'
+      path: '/sharing-component-state-with-context-and-subscription'
+      fullPath: '/sharing-component-state-with-context-and-subscription'
+      preLoaderRoute: typeof SharingComponentStateWithContextAndSubscriptionIndexImport
+      parentRoute: typeof rootRoute
+    }
     '/sharing-component-state-with-context/': {
       id: '/sharing-component-state-with-context/'
       path: '/sharing-component-state-with-context'
@@ -199,6 +214,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/sharing-component-state-with-context-and-subscription': typeof SharingComponentStateWithContextAndSubscriptionIndexRoute
   '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
   '/sharing-module-state-with-subscription': typeof SharingModuleStateWithSubscriptionIndexRoute
   '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right': typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
@@ -213,6 +229,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/sharing-component-state-with-context-and-subscription': typeof SharingComponentStateWithContextAndSubscriptionIndexRoute
   '/sharing-component-state-with-context': typeof SharingComponentStateWithContextIndexRoute
   '/sharing-module-state-with-subscription': typeof SharingModuleStateWithSubscriptionIndexRoute
   '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right': typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
@@ -228,6 +245,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/sharing-component-state-with-context-and-subscription/': typeof SharingComponentStateWithContextAndSubscriptionIndexRoute
   '/sharing-component-state-with-context/': typeof SharingComponentStateWithContextIndexRoute
   '/sharing-module-state-with-subscription/': typeof SharingModuleStateWithSubscriptionIndexRoute
   '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/': typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
@@ -244,6 +262,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/sharing-component-state-with-context-and-subscription'
     | '/sharing-component-state-with-context'
     | '/sharing-module-state-with-subscription'
     | '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right'
@@ -257,6 +276,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/sharing-component-state-with-context-and-subscription'
     | '/sharing-component-state-with-context'
     | '/sharing-module-state-with-subscription'
     | '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right'
@@ -270,6 +290,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/sharing-component-state-with-context-and-subscription/'
     | '/sharing-component-state-with-context/'
     | '/sharing-module-state-with-subscription/'
     | '/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/'
@@ -285,6 +306,7 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SharingComponentStateWithContextAndSubscriptionIndexRoute: typeof SharingComponentStateWithContextAndSubscriptionIndexRoute
   SharingComponentStateWithContextIndexRoute: typeof SharingComponentStateWithContextIndexRoute
   SharingModuleStateWithSubscriptionIndexRoute: typeof SharingModuleStateWithSubscriptionIndexRoute
   SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute: typeof SharingComponentStateWithContextAvoidingProviderNestingWithReduceRightIndexRoute
@@ -299,6 +321,8 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SharingComponentStateWithContextAndSubscriptionIndexRoute:
+    SharingComponentStateWithContextAndSubscriptionIndexRoute,
   SharingComponentStateWithContextIndexRoute:
     SharingComponentStateWithContextIndexRoute,
   SharingModuleStateWithSubscriptionIndexRoute:
@@ -332,6 +356,7 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/sharing-component-state-with-context-and-subscription/",
         "/sharing-component-state-with-context/",
         "/sharing-module-state-with-subscription/",
         "/sharing-component-state-with-context/avoiding-provider-nesting-with-reduce-right/",
@@ -346,6 +371,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/sharing-component-state-with-context-and-subscription/": {
+      "filePath": "sharing-component-state-with-context-and-subscription/index.tsx"
     },
     "/sharing-component-state-with-context/": {
       "filePath": "sharing-component-state-with-context/index.tsx"

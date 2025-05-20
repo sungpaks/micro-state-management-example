@@ -27,6 +27,9 @@ export default function Header() {
         <Link to="/sharing-module-state-with-subscription" className="bg-amber-400 px-2 py-1">
           Chapter 4
         </Link>
+        <Link to="/sharing-component-state-with-context-and-subscription" className="bg-amber-400 px-2 py-1">
+          Chapter 5
+        </Link>
       </div>
     </div>
   );
