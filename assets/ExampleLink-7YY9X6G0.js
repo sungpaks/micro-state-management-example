@@ -1,4 +1,4 @@
-import{c as n,j as e,L as a,I as r}from"./index-BJXsCeZL.js";/**
+import{c as n,j as e,L as a,I as r}from"./index-mr5tb085.js";/**
  * @license @tabler/icons-react v3.31.0 - MIT
  *
  * This source code is licensed under the MIT license.
