@@ -26,7 +26,7 @@ function RouteComponent() {
         <ContextWithUseStateExample />
       </ExampleWrapper>
 
-      <ExampleWrapper title="useContext : extra re-render limitations">
+      <ExampleWrapper title="useContext : extra re-render limitations" id="context-extra-rerender-limitations">
         <ExtraRerenderProblemExample />
       </ExampleWrapper>
 
